@@ -14,6 +14,7 @@ app.get('/', function(request, response) {
   console.log(request)
   console.log("response:")
   console.log(response)
+  response.render('pages/index');
 });
 
 app.listen(app.get('port'), function() {
