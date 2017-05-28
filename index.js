@@ -5,11 +5,12 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+const bodyParser = require('body-parser');
+//Parse the contents in the form tag, as body to request  
+app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(bodyParser.json());
+//Teach the server to understand JSON data
+app.use(bodyParser.json())
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
