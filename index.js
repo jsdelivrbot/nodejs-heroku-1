@@ -9,6 +9,10 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 app.get('/', function(request, response) {
   console.log("request:")
   console.log(request)
@@ -25,10 +29,10 @@ app.get('/webhook/', function (req, res) {
 })
 
 app.post('/webhook/', function (req, res) {
-    let messaging_events = req
     console.log("messaging_events")
-    console.log(messaging_events) 
+    console.log(req.body);    	
     res.sendStatus(200)
+    res.json(req.body);
 })
 
 
