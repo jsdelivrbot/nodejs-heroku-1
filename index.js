@@ -25,7 +25,7 @@ app.get('/webhook/', function (req, res) {
 })
 
 app.post('/webhook/', function (req, res) {
-    let messaging_events = req.body
+    let messaging_events = req
     console.log("messaging_events")
     console.log(messaging_events) 
     res.sendStatus(200)
