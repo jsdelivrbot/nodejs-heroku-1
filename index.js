@@ -33,7 +33,7 @@ app.get('/webhook/', function (req, res) {
 
 app.post('/webhook/', function (req, res) {
     console.log("messaging_events")
-    console.log(req.body.entry);    	
+    console.log(req.body.entry[0].changes);    	
     res.sendStatus(200)    
 })
 
