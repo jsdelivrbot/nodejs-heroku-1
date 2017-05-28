@@ -18,8 +18,10 @@ app.get('/', function(request, response) {
 });
 
 app.get('/webhook/', function (req, res) {
-	console.log("request")
-  console.log(req)
+	if (req.query['hub.verify_token'] === 'uyviet is a sick cunt') {
+		res.send(req.query['hub.challenge'])
+	}
+	res.send('Error, wrong token')
 })
 
 app.listen(app.get('port'), function() {
