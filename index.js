@@ -17,6 +17,11 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/webhook/', function (req, res) {
+	console.log("request")
+  console.log(req)
+})
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
