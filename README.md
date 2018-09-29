@@ -1,2 +1,2 @@
 # nodejs-heroku
-Boilerplate for people who want to host static application on heroku 
+Boilerplate for people who want to host node application on heroku 
